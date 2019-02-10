@@ -14,10 +14,10 @@ class App extends Component {
     inputPhoneBook: ''
   }
 
-  handleSelectedList = (event) => {
+  handleSelectedList = (e) => {
     this.setState({
-      selectedList: this.state.allList.filter(phonebook => phonebook.name.search(event.target.value) !== -1),
-      inputPhoneBook: event.target.value
+      selectedList: this.state.allList.filter(phonebook => phonebook.name.search(e.target.value) !== -1),
+      inputPhoneBook: e.target.value
     });
   }
 
@@ -62,20 +62,23 @@ class App extends Component {
   }
 
   render() {
+    const {inputPhoneBook, selectedList, selectedPhoneBook} = this.state;
+    const {handleSelectedList, addPhoneBook, handleSelectedPhoneBook, removePhoneBook} = this;
+
     return (
       <div className='container'>
         <div className='row'>
           <h2>브롤 주소록</h2>
         </div>
         <div className='row col-sm-6'>
-          <SearchBar handleSelectedList = {this.handleSelectedList} addPhoneBook = {this.addPhoneBook} inputPhoneBook = {this.state.inputPhoneBook} />
+          <SearchBar handleSelectedList = {handleSelectedList} addPhoneBook = {addPhoneBook} inputPhoneBook = {inputPhoneBook} />
         </div>
         <div className='row'>
           <div className='col-sm-3'>   
-            <PhoneBookList handleSelectedPhoneBook = {this.handleSelectedPhoneBook} phoneBookList={this.state.selectedList} removePhoneBook = {this.removePhoneBook} />
+            <PhoneBookList handleSelectedPhoneBook = {handleSelectedPhoneBook} phoneBookList={selectedList} removePhoneBook = {removePhoneBook} />
           </div>
           <div className='col-sm-3 card'>
-            <PhoneDetail phoneBook = {this.state.selectedPhoneBook}/> 
+            <PhoneDetail phoneBook = {selectedPhoneBook}/> 
           </div>
         </div>
       </div>
