@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class PhoneDetail extends Component {
+export default class PhoneBookDetail extends Component {
   render() {
     if (!this.props.phoneBook) {
         return (

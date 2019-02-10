@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './components/SearchBar';
 import PhoneBookList from './components/PhoneBookList';
-import PhoneDetail from './components/PhoneDetail';
+import PhoneBookDetail from './components/PhoneBookDetail';
 import { phoneList } from './static/DummyList';
 
 class App extends Component {
@@ -78,7 +78,7 @@ class App extends Component {
             <PhoneBookList handleSelectedPhoneBook = {handleSelectedPhoneBook} phoneBookList={selectedList} removePhoneBook = {removePhoneBook} />
           </div>
           <div className='col-sm-3 card'>
-            <PhoneDetail phoneBook = {selectedPhoneBook}/> 
+            <PhoneBookDetail phoneBook = {selectedPhoneBook}/> 
           </div>
         </div>
       </div>
