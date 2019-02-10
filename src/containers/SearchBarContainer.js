@@ -13,7 +13,6 @@ import { dummyList } from '../static/DummyList';
 class SearchBarContainer extends Component {
   id = dummyList.size;
   getId = () => {
-      alert(this.id);
       return ++this.id;
   }
 
