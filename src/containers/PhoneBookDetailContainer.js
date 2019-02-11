@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import PhoneBookDetail from '../components/PhoneBookDetail';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-import * as phonebookActions from '../modules/phonebook';
 
 class PhoneBookDetailContainer extends Component {
   render() {
@@ -20,7 +17,5 @@ export default connect(
     (state) => ({
         selected: state.phonebook.get('selected')
     }),
-    (dispatch) => ({
-        PhonebookActions: bindActionCreators(phonebookActions, dispatch)
-    })
+    null
 )(PhoneBookDetailContainer);
